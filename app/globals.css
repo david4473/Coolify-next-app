@@ -1,107 +1,190 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #111c25;
+  background-color: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #646cff;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+li {
+  list-style-type: none;
+}
+
+ul {
+  padding: 0 15px;
+}
+
+p,
+h1 {
   margin: 0;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+button:hover {
+  background-color: #d80b0b;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.add-task-button:hover {
+  background-color: #414491;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+input[type=text] {
+  max-width: 100%;
+  border-radius: 5px;
+  background-color: white;
+  color: #1a1a1a;
+  border: solid #0060DF 2px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+textarea {
+  border-radius: 5px;
+  background-color: white;
+  border: solid #0060DF 2px;
+  padding: 10px;
+  max-width: 100%;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+.app-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.task-card {
+  border: solid #0060DF 2px;
+  border-radius: 5px;
+  padding: 10px;
+  width: 400px;
+  margin-bottom: 10px;
+}
+
+.task-title {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h1 {
+  margin-bottom: 60px;
+  font-family: "Nanum Pen Script", cursive;
+}
+
+.task-list-header {
+  text-align: center;
+  color: rgb(96, 96, 96);
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 30px;
+}
+
+.task-checkbox {
+  width: 15px;
+  height: 15px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.task-completed {
+  opacity: 0.5;
+}
+
+.delete-task-button {
+  opacity: 1;
+  background: #d80b0b;
+  margin-top: 10px;
+  display: block;
+}
+
+.task-list-section {
+  border: #0060DF 0.2px solid;
+  height: 700px;
+  overflow-y: scroll;
+  padding: 0 20px;
+}
+
+.task-actions {
+  position: relative;
+}
+
+.arrow-icon {
+  position: absolute;
+  top: -30px;
+  left: -50px;
+  rotate: -30deg;
+}
+
+span {
+  position: absolute;
+  top: -45%;
+  left: -100px;
+  rotate: -40deg;
+  font-size: 17px;
+  font-family: "Nanum Pen Script", cursive;
+  color: gray;
+}
+
+.show-text{
+  display: flex;
+  font-family: "Nanum Pen Script", cursive;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: gray;
+  width: 100%;
+  height: 500px;
+}
+
+.hide-text{
+  display: none;
+}
+
+@media only screen and (max-width: 868px) {
+  .app-container {
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .task-list-section {
+    margin-top: 50px;
+    border: none;
+    border-top: 2px solid #747bff;
+  }
+
+  .task-card {
+    width: 400px;
   }
 }
