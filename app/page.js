@@ -30,9 +30,7 @@ export default function Home() {
     setDescription("");
   };
 
-  const updateTask = async (id, completed) => {
-    const data = tasks.filter((task) => task.id == id);
-    const { title, description } = data[0];
+  const updateTask = async (id, completed, title, description) => {
     const res = await axios.put(
       `http://vow8owk.209.97.189.179.sslip.io/tasks/${id}`,
       {
@@ -106,7 +104,14 @@ export default function Home() {
                     className="task-checkbox"
                     type="checkbox"
                     style={{ display: "inline-block" }}
-                    onChange={() => updateTask(task.id, !task.completed)}
+                    onChange={() =>
+                      updateTask(
+                        task.id,
+                        !task.completed,
+                        task.title,
+                        task.description
+                      )
+                    }
                   />
                 </div>
               </div>
