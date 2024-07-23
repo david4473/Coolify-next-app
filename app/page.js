@@ -75,7 +75,7 @@ export default function Home() {
       >
         <h2 className="task-list-header">Tasks</h2>
         <div className={tasks.length == 0 ? "show-text" : "hide-text"}>
-          <p>It&apos;s quiet in here today</p>
+          <p>It&apos;s quiet in here</p>
         </div>
         <ul className="task-list">
           {tasks.map((task) => (
